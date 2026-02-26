@@ -1,6 +1,6 @@
-# 🧩 02 – Add Service Definition
+# 🧩 03 – Consuming the External Service
 
-This branch introduces a custom CAP service definition that exposes selected entities from the imported external model.
+This branch introduces the configuration of the credentials for the `weatherservice`.
 
 ⚠️ No runtime handler logic exists yet.
 
@@ -8,38 +8,21 @@ This branch introduces a custom CAP service definition that exposes selected ent
 
 ## 🎯 Objectives of This Step
 
-- Create a CAP service definition
-- Use projections on external entities
-- Introduce a controlled service layer
+- Add credentials section to API_BUSINESS_PARTNER
+- Use a `.env` file to store the value of your API Key (SAP Business Accelerator Hub)
 
 ---
 
 ## 🗂 Relevant Files
 
 ```
-srv/
-├── external/API_BUSINESS_PARTNER.cds
-└── service.cds
-```
-
----
-
-## 🏗 Service Definition Concept
-
-Example structure:
-
-```
-using { API_BUSINESS_PARTNER as external } from './external/API_BUSINESS_PARTNER';
-
-service BusinessPartnerService {
-  entity Suppliers as projection on external.A_BusinessPartner;
-}
+.env
+package.json
 ```
 
 ---
 
 ## 🧠 What You Learned
 
-- How to define CAP services
-- How projections work
-- Why a service abstraction layer is important
+- How to define credentials of a service
+- How to use .env file for storing sensitive values
