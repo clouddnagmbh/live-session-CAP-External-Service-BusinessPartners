@@ -1,54 +1,53 @@
-# ⚙️ 04 – Add Service Handler
+# 🖥 05 – Add UI (SAPUI5 / Fiori)
 
-This branch adds runtime logic to forward requests to the external API.
-The CAP service now actively connects to the external OData service.
+This branch adds a SAPUI5/Fiori frontend application to the deployed CAP backend.
 
 ---
 
 ## 🎯 Objectives
 
-- Implement service handler
-- Use cds.connect.to()
-- Forward OData queries dynamically
+- Add UI module
+- Bind to OData V4 service
+- Provide full-stack integration
 
 ---
 
 ## 🗂 Relevant Files
 
 ```
-srv/
-├── service.cds
-└── service.js
+app/business-partner-example/
 ```
 
 ---
 
-## 🧠 Handler Logic
+## 📸 Screenshots
 
-Conceptual implementation:
+### 1️⃣ Application Launch
 
-```
-const cds = require("@sap/cds");
+![Launch](screenshots/template-selection.png)
 
-module.exports = cds.service.impl(async function () {
-    const bupa = await cds.connect.to('API_BUSINESS_PARTNER');
+![List](screenshots/data-source.png)
 
-    this.on('READ', 'A_BusinessPartner', async (req) => {
-        return bupa.run(req.query);
-    });
-});
-```
+![Navigation](screenshots/entity-selection.png)
+
+![Detail](screenshots/project-attributes.png)
+
+![Search](screenshots/result.png)
 
 ---
 
-## 🔄 Runtime Flow
+## 🔄 Full Architecture
 
-Client → CAP Handler → External SAP API → Response
+Browser  
+→ SAPUI5 App  
+→ CAP Service (BTP)  
+→ Destination  
+→ External SAP Business Partner API  
 
 ---
 
 ## 🧠 What You Learned
 
-- How to implement handlers
-- How to forward queries
-- How CAP acts as middleware
+- How to add UI to CAP
+- How to bind UI5 to OData
+- How full-stack CAP applications work
