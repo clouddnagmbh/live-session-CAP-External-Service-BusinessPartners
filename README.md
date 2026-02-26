@@ -1,23 +1,39 @@
-# 🖥 08 – Configure Destination in CAP
+# 🔐 09 – Create Destination in SAP BTP Subaccount
 
-This branch adds the required configuration for the `API_BUSINESS_PARTNER` destination.
+This branch configures secure outbound connectivity using SAP BTP Destination service.
 
 ---
 
 ## 🎯 Objectives
 
-- Configure destination for `API_BUSINESS_PARTNER` service
+- Configure Destination in BTP
+- Adjust security configuration
+- Enable secure external API access
 
 ---
 
-## 🗂 Relevant Files
+## 📸 Screenshots
 
-```
-package.json
-```
+### 1️⃣ Destination Configuration
+
+![Destination Setup](screenshots/btp-destinations.png)
+
+![Authentication](screenshots/context-level.png)
+
+![Config 1](screenshots/no-destinations.png)
+
+![Config 2](screenshots/create-new-destination.png)
+
+![Config 3](screenshots/destination-details.png)
+
+![Config 4](screenshots/result.png)
+
+These screenshots document the complete destination setup process.
 
 ---
 
 ## 🧠 What You Learned
 
-- How to configure a destination for `API_BUSINESS_PARTNER` service which is used for production
+- How to configure Destinations
+- How CAP connects via Destination
+- How secure outbound connectivity works
