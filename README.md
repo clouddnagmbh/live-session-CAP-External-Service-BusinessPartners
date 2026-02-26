@@ -1,39 +1,37 @@
-# 🔐 09 – Create Destination in SAP BTP Subaccount
+# 🚀 10 – Add MTA File for Deployment
 
-This branch configures secure outbound connectivity using SAP BTP Destination service.
+This branch prepares the CAP project for deployment to SAP BTP using an MTA descriptor.
 
 ---
 
 ## 🎯 Objectives
 
-- Configure Destination in BTP
-- Adjust security configuration
-- Enable secure external API access
+- Add mta.yaml
+- Define modules and resources
+
+---
+
+## 🗂 Relevant Files
+
+```
+mta.yaml
+```
 
 ---
 
 ## 📸 Screenshots
 
-### 1️⃣ Destination Configuration
+### MTA File Added
 
-![Destination Setup](screenshots/btp-destinations.png)
+![MTA Configuration](screenshots/result.png)
 
-![Authentication](screenshots/context-level.png)
+**Description:**
 
-![Config 1](screenshots/no-destinations.png)
-
-![Config 2](screenshots/create-new-destination.png)
-
-![Config 3](screenshots/destination-details.png)
-
-![Config 4](screenshots/result.png)
-
-These screenshots document the complete destination setup process.
+Shows the created `mta.yaml` defining modules and required resources.
 
 ---
 
 ## 🧠 What You Learned
 
-- How to configure Destinations
-- How CAP connects via Destination
-- How secure outbound connectivity works
+- What an MTA is
+- How deployment descriptors work
