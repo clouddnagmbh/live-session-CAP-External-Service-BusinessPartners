@@ -1,28 +1,54 @@
-# 🧩 03 – Consuming the External Service
+# ⚙️ 04 – Add Service Handler
 
-This branch introduces the configuration of the credentials for the `weatherservice`.
-
-⚠️ No runtime handler logic exists yet.
+This branch adds runtime logic to forward requests to the external API.
+The CAP service now actively connects to the external OData service.
 
 ---
 
-## 🎯 Objectives of This Step
+## 🎯 Objectives
 
-- Add credentials section to API_BUSINESS_PARTNER
-- Use a `.env` file to store the value of your API Key (SAP Business Accelerator Hub)
+- Implement service handler
+- Use cds.connect.to()
+- Forward OData queries dynamically
 
 ---
 
 ## 🗂 Relevant Files
 
 ```
-.env
-package.json
+srv/
+├── service.cds
+└── service.js
 ```
+
+---
+
+## 🧠 Handler Logic
+
+Conceptual implementation:
+
+```
+const cds = require("@sap/cds");
+
+module.exports = cds.service.impl(async function () {
+    const bupa = await cds.connect.to('API_BUSINESS_PARTNER');
+
+    this.on('READ', 'A_BusinessPartner', async (req) => {
+        return bupa.run(req.query);
+    });
+});
+```
+
+---
+
+## 🔄 Runtime Flow
+
+Client → CAP Handler → External SAP API → Response
 
 ---
 
 ## 🧠 What You Learned
 
-- How to define credentials of a service
-- How to use .env file for storing sensitive values
+- How to implement handlers
+- How to forward queries
+- How CAP acts as middleware
