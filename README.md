@@ -1,12 +1,12 @@
-# 🖥 07 – Add XSUAA
+# 🖥 08 – Configure Destination in CAP
 
-This branch adds the required configuration for SAP Authorization and Trust Management.
+This branch adds the required configuration for the `API_BUSINESS_PARTNER` destination.
 
 ---
 
 ## 🎯 Objectives
 
-- Add XSUAA package for production
+- Configure destination for `API_BUSINESS_PARTNER` service
 
 ---
 
@@ -14,11 +14,10 @@ This branch adds the required configuration for SAP Authorization and Trust Mana
 
 ```
 package.json
-xs-security.json
 ```
 
 ---
 
 ## 🧠 What You Learned
 
-- How to add SAP Authorization and Trust Management as production authentication in CAP
+- How to configure a destination for `API_BUSINESS_PARTNER` service which is used for production
