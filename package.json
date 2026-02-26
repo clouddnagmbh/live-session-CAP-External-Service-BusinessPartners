@@ -1,5 +1,5 @@
 {
-  "name": "live-session-CAP-External-Service-BusinessPartners",
+  "name": "business-partners",
   "version": "1.0.0",
   "description": "A simple CAP project.",
   "dependencies": {

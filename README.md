@@ -1,59 +1,45 @@
-# 🔌 01 – External Service
+# 🧩 02 – Add Service Definition
 
-This branch initializes the integration of the external SAP S/4HANA OData service API_BUSINESS_PARTNER into the CAP project.
+This branch introduces a custom CAP service definition that exposes selected entities from the imported external model.
 
-In this step, we import the external EDMX definition and generate the corresponding CDS model.
-
-⚠️ The service is not yet exposed or executed.
+⚠️ No runtime handler logic exists yet.
 
 ---
 
 ## 🎯 Objectives of This Step
 
-- Import external OData service (EDMX)
-- Convert EDMX to CDS
-- Prepare project for external consumption
+- Create a CAP service definition
+- Use projections on external entities
+- Introduce a controlled service layer
 
 ---
 
 ## 🗂 Relevant Files
 
 ```
-srv/external/
-├── API_BUSINESS_PARTNER.edmx
-└── API_BUSINESS_PARTNER.cds
+srv/
+├── external/API_BUSINESS_PARTNER.cds
+└── service.cds
 ```
 
 ---
 
-## 🌐 External Service Import
+## 🏗 Service Definition Concept
 
-The import was executed using:
+Example structure:
 
 ```
-cds import srv/external/API_BUSINESS_PARTNER.edmx --as cds
+using { API_BUSINESS_PARTNER as external } from './external/API_BUSINESS_PARTNER';
+
+service BusinessPartnerService {
+  entity Suppliers as projection on external.A_BusinessPartner;
+}
 ```
-
-CAP generated the CDS representation of the OData service.
-
----
-
-## 📸 Result
-
-![External Service Import](screenshots/result-cds-import.png)
-
-**Description:**
-
-The above screenshot shows the successfully imported external service model inside the CAP project structure.
-
-- EDMX file converted to CDS
-- External namespace available
-- No service exposure yet
 
 ---
 
 ## 🧠 What You Learned
 
-- How to import external OData services
-- How CAP transforms EDMX to CDS
-- How to prepare external integration
+- How to define CAP services
+- How projections work
+- Why a service abstraction layer is important
