@@ -1,12 +1,12 @@
-# 🖥 06 – Add HANA
+# 🖥 07 – Add XSUAA
 
-This branch adds the required configuration for SAP HANA Database.
+This branch adds the required configuration for SAP Authorization and Trust Management.
 
 ---
 
 ## 🎯 Objectives
 
-- Add HANA package
+- Add XSUAA package for production
 
 ---
 
@@ -14,10 +14,11 @@ This branch adds the required configuration for SAP HANA Database.
 
 ```
 package.json
+xs-security.json
 ```
 
 ---
 
 ## 🧠 What You Learned
 
-- How to add SAP HANA Database as production database in CAP
+- How to add SAP Authorization and Trust Management as production authentication in CAP
