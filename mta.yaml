@@ -26,7 +26,7 @@ modules:
           srv-url: ${default-url}
     requires:
       - name: business-partners-auth
-      - name: business-partners-db
+      - name: bupa-db
       - name: business-partners-destination
 
   - name: business-partners-db-deployer
@@ -35,7 +35,7 @@ modules:
     parameters:
       buildpack: nodejs_buildpack
     requires:
-      - name: business-partners-db
+      - name: bupa-db
 
   - name: business-partners-app-deployer
     type: com.sap.application.content
@@ -71,8 +71,7 @@ modules:
       commands:
         - npm ci
         - npm run build
-      supported-platforms:
-        []
+      supported-platforms: []
 
 resources:
   - name: business-partners-auth
@@ -88,7 +87,7 @@ resources:
           credential-types:
             - "binding-secret"
             - "x509"
-  - name: business-partners-db
+  - name: bupa-db
     type: com.sap.xs.hdi-container
     parameters:
       service: hana
