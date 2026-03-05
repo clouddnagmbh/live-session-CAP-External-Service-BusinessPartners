@@ -1,84 +1,66 @@
-# 🚀 12 – Build and Deploy to Cloud Foundry
+# 🏁 SAP CAP Business Partners Integration
 
-This branch covers the steps to build and deploy the SAP CAP project to the
-**Cloud Foundry Runtime** in **SAP BTP**.
-
----
-
-## 🎯 Objectives
-
-- **Authenticate** with SAP BTP via the Cloud Foundry CLI
-- **Build and Deploy** the project using the CAP development stack
-- **Verify** the status of services and running applications in the targeted
-  space
+This is the final version of the SAP Cloud Application Programming Model (CAP) project. It demonstrates a complete end-to-end integration scenario, from consuming external services to full cloud deployment on SAP BTP.
 
 ---
 
-## 🛠 Deployment Steps
+## 🎯 Final Project Scope
 
-### 1. Log in to Cloud Foundry
+This project implements a service that interacts with external Business Partner data, secures it via XSUAA, persists data in SAP HANA, and provides a Fiori UI—all deployed to the Cloud Foundry runtime.
 
-Before deploying, you must authenticate with your BTP subaccount. The `--sso`
-flag is used for a browser-based login.
+---
 
-```bash
-cf login --sso
-```
+## 🛠 Project Roadmap & Evolution
 
-**API Endpoint:** Ensure you are targeting the correct region (e.g.
-`api.cf.us10-001.hana.ondemand.com`).
+The development of this application was structured into 12 distinct phases, each represented by a specific branch in this repository:
 
-**Passcode:** Retrieve your temporary authentication code from the URL provided
-in the terminal.
+| Phase | Branch | Key Focus |
+| :--- | :--- | :--- |
+| **01** | `01-external-service` | Defining external service API |
+| **02** | `02-service-definition` | Defining the core CAP service and domain models |
+| **03** | `03-consuming-external-service` | Implementing the logic to fetch data from external system |
+| **04** | `04-service-handler` | Custom event handler for READ operation |
+| **05** | `05-fiori-ui` | Generating the SAP Fiori Elements user interface |
+| **06** | `06-hana` | Configuring persistence with SAP HANA Cloud |
+| **07** | `07-xsuaa` | Securing the application with Authentication & Trust Management |
+| **08** | `08-destination-cap` | Configuring local service consumption via Destinations |
+| **09** | `09-destination-btp` | Connecting to the actual BTP Destination Service |
+| **10** | `10-mta` | Creating the Multi-Target Application (MTA) descriptor |
+| **11** | `11-app-frontend` | Finalizing frontend routing and `xs-app.json` configuration |
+| **12** | `12-deployment` | Final build and deployment to Cloud Foundry |
 
-### 2. Build and Deploy
+---
 
-The CAP CLI provides a streamlined command to build the MTA (Multi-Target
-Application) archive and push it to the cloud environment.
+## 🚀 Final Deployment Summary
 
-```bash
-cds up
-```
+The final application is architected to run in the **SAP BTP Cloud Foundry Runtime**.
 
-This command handles the creation of service instances (DB, XSUAA, etc.) and
-starts the application server. As seen in the logs, the application `bupa-srv`
-is staged and started.
+### Key Deployment Commands
+To reproduce the final state in your own BTP space:
 
-## 📸 Verification
+1. **Login:** `cf login --sso`
+2. **Build & Deploy:** `cds up`
+3. **Verify:** `cf apps` & `cf services`
 
-### List Service Instances
+### Active Services in BTP
+* **HANA Cloud:** Database persistence
+* **XSUAA:** Identity management and API security
+* **Destination Service:** Connectivity to external OData APIs
 
-Verify that all required backing services—such as **HANA**, **XSUAA**, and
-**Destination** have been successfully created and bound.
+---
 
-```Bash
-cf services
-```
+## 📸 Final Application State
 
-### Check Application Status
+The application consists of a Node.js-based CAP service and a Fiori Elements UI. 
 
-Confirm that the `bupa-srv` and other modules are in a `started` state and
-retrieve the public route (URL).
+> **Tip:** You can view the specific logs for the running application using:
+> `cf logs bupa-srv --recent`
 
-```Bash
-cf apps
-```
+---
 
-**Note:** In the screenshots, the `bupa-db-deployer` shows as `stopped`. This is
-expected behavior for deployer tasks once they have successfully finished
-pushing the database schema to HANA.
-
-## 🗂 Relevant Files
-
-```
-mta.yaml          # The deployment descriptor for CF
-package.json      # CAP project configurations
-mta_archives/     # Generated MTAR file after build
-```
-
-## 🧠 What You Learned
-
-- How to use the CF CLI to target a specific BTP Org and Space
-- Using `cds up` for rapid, automated deployment of CAP projects
-- How to interpret the lifecycle of deployer applications vs. service
-  applications
+## 🧠 Core Competencies Gained
+* Full-stack development with **SAP CAP**
+* Cloud-native development on **SAP BTP**
+* Security implementation using **OAuth2 and XSUAA**
+* Handling **External OData Services** and Destinations
+* **MTA** (Multi-Target Application) lifecycle management
