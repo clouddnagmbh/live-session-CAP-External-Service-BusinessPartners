@@ -39,7 +39,8 @@
       },
       "[production]": {
         "auth": "xsuaa"
-      }
+      },
+      "app-front": true
     }
   },
   "workspaces": [

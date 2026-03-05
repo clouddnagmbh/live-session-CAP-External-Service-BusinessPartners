@@ -1,13 +1,15 @@
-# 🚀 10 – Add MTA File for Deployment
+# 🚀 11 – Add Application Frontend
 
-This branch prepares the CAP project for deployment to SAP BTP using an MTA descriptor.
+This branch prepares the CAP project for deployment to Application Frontend.
 
 ---
 
 ## 🎯 Objectives
 
-- Add mta.yaml
-- Define modules and resources
+- Add xs-app.json
+- Adjust mta.yaml
+- Adjust ui5.yaml
+- Adjust package.json files
 
 ---
 
@@ -15,23 +17,27 @@ This branch prepares the CAP project for deployment to SAP BTP using an MTA desc
 
 ```
 mta.yaml
+package.json
+app/business-partners-example/package.json
+app/business-partners-example/ui5.yaml
+app/business-partners-example/xs-app.json
 ```
 
 ---
 
 ## 📸 Screenshots
 
-### MTA File Added
+### xs-app.json added
 
-![MTA Configuration](screenshots/result.png)
+![xs-app.json](screenshots/xs-app.png)
 
 **Description:**
 
-Shows the created `mta.yaml` defining modules and required resources.
+Shows the created `xs-app.json` defining the routes.
 
 ---
 
 ## 🧠 What You Learned
 
-- What an MTA is
-- How deployment descriptors work
+- What xs-app.json is
+- How Application Frontend work
