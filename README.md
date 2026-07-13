@@ -1,37 +1,45 @@
-# 🚀 10 – Add MTA File for Deployment
+# 🚀 12 – Build and Deploy to SAP BTP
 
-This branch prepares the CAP project for deployment to SAP BTP using an MTA descriptor.
+This branch contains the final state of the application, built and deployed to the SAP BTP, Cloud Foundry runtime.
 
 ---
 
 ## 🎯 Objectives
 
-- Add mta.yaml
-- Define modules and resources
+- Log in to Cloud Foundry
+- Build and deploy the application
+- Verify the deployment
+
+---
+
+## ▶️ Commands
+
+```bash
+cf login --sso     # log in to Cloud Foundry
+cds up             # build and deploy the MTA
+```
+
+Verify the deployment:
+
+```bash
+cf services        # list created service instances
+cf apps            # check that all apps are running
+```
+
+Afterwards the application can be accessed via the route shown by `cf apps`.
 
 ---
 
 ## 🗂 Relevant Files
 
 ```
-mta.yaml
+app/business-partners-example/dist/   → built UI artifacts
 ```
-
----
-
-## 📸 Screenshots
-
-### MTA File Added
-
-![MTA Configuration](screenshots/result.png)
-
-**Description:**
-
-Shows the created `mta.yaml` defining modules and required resources.
 
 ---
 
 ## 🧠 What You Learned
 
-- What an MTA is
-- How deployment descriptors work
+- How `cds up` builds and deploys the entire MTA in one step
+- How to verify service instances and running applications
+- How to access the deployed application in the browser
