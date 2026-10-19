@@ -32,6 +32,28 @@ These screenshots document the complete destination setup process.
 
 ---
 
+## 🔑 Destination Properties
+
+Create the destination **from scratch** with these values:
+
+| Field | Value |
+| :--- | :--- |
+| Name | `API_BUSINESS_PARTNER` (must match `credentials.destination` in the `[production]` profile of `package.json`) |
+| Type | `HTTP` |
+| URL | `https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER` |
+| Proxy Type | `Internet` |
+| Authentication | `NoAuthentication` |
+
+Then add one **Additional Property** – without it the sandbox answers `401 Unauthorized`:
+
+| Key | Value |
+| :--- | :--- |
+| `URL.headers.APIKey` | your API key from the [SAP Business Accelerator Hub](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) |
+
+Locally, the `[development]` profile sends the same key from `.env`; in production the destination adds it to every request.
+
+---
+
 ## 🧠 What You Learned
 
 - How to configure Destinations
