@@ -33,3 +33,6 @@ mta_archives/
 # @cap-js/cds-typer
 @cds-models
 .env
+
+# UI build output (created by npm run build / mbt build)
+dist/

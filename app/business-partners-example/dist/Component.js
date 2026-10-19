@@ -1,2 +1,0 @@
-sap.ui.define(["sap/fe/core/AppComponent"],function(e){"use strict";return e.extend("at.clouddna.businesspartnersexample.Component",{metadata:{manifest:"json"}})});
-//# sourceMappingURL=Component.js.map
