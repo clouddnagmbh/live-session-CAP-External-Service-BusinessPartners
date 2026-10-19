@@ -34,3 +34,5 @@ mta_archives/
 @cds-models
 .env
 .serena
+# UI build output (created by npm run build / mbt build)
+dist/
