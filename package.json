@@ -1,6 +1,7 @@
 {
   "name": "business-partners",
   "version": "1.0.0",
+  "type": "module",
   "description": "A simple CAP project.",
   "dependencies": {
     "@cap-js/hana": "^3",
