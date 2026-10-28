@@ -28,15 +28,19 @@ srv/
 Conceptual implementation:
 
 ```
-const cds = require("@sap/cds");
+import cds from '@sap/cds';
 
-module.exports = cds.service.impl(async function () {
-    const bupa = await cds.connect.to('API_BUSINESS_PARTNER');
+export class BusinessService extends cds.ApplicationService {
+    async init() {
+        const bupa = await cds.connect.to('API_BUSINESS_PARTNER');
 
-    this.on('READ', 'A_BusinessPartner', async (req) => {
-        return bupa.run(req.query);
-    });
-});
+        this.on('READ', 'A_BusinessPartner', async (req) => {
+            return bupa.run(req.query);
+        });
+
+        return super.init();
+    }
+}
 ```
 
 ---
