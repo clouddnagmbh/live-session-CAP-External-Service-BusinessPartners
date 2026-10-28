@@ -1,6 +1,7 @@
 {
   "name": "live-session-CAP-External-Service-BusinessPartners",
   "version": "1.0.0",
+  "type": "module",
   "description": "A simple CAP project.",
   "dependencies": {
     "@sap-cloud-sdk/connectivity": "^4",
