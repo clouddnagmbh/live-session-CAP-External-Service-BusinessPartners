@@ -1,6 +1,6 @@
 # 🧩 03 – Consuming the External Service
 
-This branch introduces the configuration of the credentials for the `weatherservice`.
+This branch introduces the configuration of the credentials for the `API_BUSINESS_PARTNER` service.
 
 ⚠️ No runtime handler logic exists yet.
 
