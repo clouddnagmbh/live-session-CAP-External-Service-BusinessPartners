@@ -29,10 +29,10 @@ srv/
 Example structure:
 
 ```
-using { API_BUSINESS_PARTNER as external } from './external/API_BUSINESS_PARTNER';
+using { API_BUSINESS_PARTNER as bupa } from './external/API_BUSINESS_PARTNER';
 
-service BusinessPartnerService {
-  entity Suppliers as projection on external.A_BusinessPartner;
+service BusinessService {
+  entity A_BusinessPartner as projection on bupa.A_BusinessPartner { ... };
 }
 ```
 
