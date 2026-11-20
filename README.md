@@ -15,7 +15,7 @@ This branch adds a SAPUI5/Fiori frontend application to the deployed CAP backend
 ## 🗂 Relevant Files
 
 ```
-app/business-partner-example/
+app/business-partners-example/
 ```
 
 ---
