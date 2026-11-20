@@ -6,7 +6,8 @@ This branch adds the required configuration for SAP HANA Database.
 
 ## 🎯 Objectives
 
-- Add HANA package
+- Add HANA package (`@cap-js/hana`)
+- Use HANA as the production database (`"[production]": { "db": "hana" }`)
 
 ---
 
