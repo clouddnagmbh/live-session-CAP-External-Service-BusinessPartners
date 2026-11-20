@@ -4,9 +4,6 @@
   "type": "module",
   "description": "A simple CAP project.",
   "dependencies": {
-    "@sap-cloud-sdk/connectivity": "^4",
-    "@sap-cloud-sdk/http-client": "^4",
-    "@sap-cloud-sdk/resilience": "^4",
     "@sap/cds": "^10",
     "express": "^4"
   },
