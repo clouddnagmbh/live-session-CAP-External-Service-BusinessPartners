@@ -7,7 +7,7 @@ This branch adds the required configuration for the `API_BUSINESS_PARTNER` desti
 ## 🎯 Objectives
 
 - Configure destination for `API_BUSINESS_PARTNER` service
-- Add the SAP Cloud SDK packages that destinations need (`@sap-cloud-sdk/connectivity`, `http-client`, `resilience`)
+- Use the SAP Cloud SDK packages that destinations need (`@sap-cloud-sdk/connectivity`, `http-client`, `resilience`) – `cds import` already added them in step 01
 
 ---
 
